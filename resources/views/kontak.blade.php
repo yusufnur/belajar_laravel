@@ -83,7 +83,7 @@
                 </div>
 
                 <div>
-                    Kontak saya: weblanjutabc2017@gmail.com
+                    Kontak saya: yusuf.n@mail.ugm.ac.id
 					<br>
 					<a href="/">Home</a>
                 </div>
