@@ -93,7 +93,25 @@ class ManageAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'job_title' => 'required',
+            'password' => 'same:confirm-password',
+        ]);
+
+        $input = $request->all();
+        if(!empty($input['password'])){
+            $input['password'] = Hash::make($input['password']);
+        }else{
+            $input = array_except($input,array('password'));
+        }
+
+        $admin = Admin::find($id);
+        $admin->update($input);
+
+        return redirect()->route('manageadmins.index')
+            ->with('success','Admin successfully updated');
     }
 
     /**
@@ -104,6 +122,8 @@ class ManageAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Admin::find($id)->delete();
+        return redirect()->route('manageadmins.index')
+            ->with('success','Admin successfully deleted');
     }
 }
