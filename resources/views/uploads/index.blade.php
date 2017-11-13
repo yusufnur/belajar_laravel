@@ -35,6 +35,7 @@ href="{{ route('upload.create') }}"> Upload</a>
 </tr>
 </thead>
 <tbody>
+
 @foreach ($uploads as $key => $upload)
 <tr>
 <td>{{ ++$i }}</td>
