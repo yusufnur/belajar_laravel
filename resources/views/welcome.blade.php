@@ -91,6 +91,7 @@
 					<a href="percakapan">Percakapan</a>
 					<a href="kontak">Kontak</a>
 					<a href="template">Templating</a>
+                    <a href="upload">Upload</a>
                 </div>
             </div>
         </div>

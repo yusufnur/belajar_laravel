@@ -67,3 +67,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
 
+Route::get('upload',['as'=>'upload.index','uses'=>'UploadController@index']);
+Route::get('upload/create',['as'=>'upload.create','uses'=>'UploadController@create']);
+Route::post('upload',['as'=>'upload.store','uses'=>'UploadController@store']);
+
